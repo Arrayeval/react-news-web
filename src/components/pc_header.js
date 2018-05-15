@@ -39,14 +39,19 @@ handleClick(e){
 handleSubmit(e){
   //页面开始向api 提交
   e.preventDefault();
-  var myFetchDptions={
+  var myFetchOptions={
     method:'GET'
   };
   var formData = this.props.form.getFieldsValue();
-  fetch("")
+  fetch("http://newsapi.gugujiankong.com/Handler.ashx?action=register&r_userName="+formData.r_userName+"&r_password="+formData.r_password+"&r_confirmPassword="+formData.r_confirmPassword,myFetchOptions)
+  .then(response=>response.json()).then(json=>{
+  			this.setState({userNickName:json.NickUserName,userid:json.UserId});
+  		});
+  		message.success("请求成功！");
+  		this.setModalVisible(false);
 }
 render(){
-  let {getFieldDecorator} =this.props.form;
+  let {getFieldProps} =this.props.form;
   const userShow = this.state.hasLogined
   ?<Menu.Item key="loginout" className="register">
     <Button type="primary" htmlType="button">{this.state.userNickName}</Button>
@@ -107,13 +112,13 @@ render(){
                 <TabPane tab="注册" key="2">
                   <Form  onSubmit={this.handleSubmit.bind(this)}>
                     <FormItem label="账户">
-                      <Input placeholder="输入你的账号" {...getFieldDecorator("r_userName")}/>
+                      <Input placeholder="输入你的账号" {...getFieldProps("r_userName")}/>
                     </FormItem>
                     <FormItem label="密码">
-                      <Input  type="password" placeholder="请输入你的密码" {...getFieldDecorator("r_password")}/>
+                      <Input  type="password" placeholder="请输入你的密码" {...getFieldProps("r_password")}/>
                     </FormItem>
                     <FormItem label="确认密码">
-                      <Input type="password" placeholder="请再次输入你的密码" {...getFieldDecorator("r_confirmPassword")}/>
+                      <Input type="password" placeholder="请再次输入你的密码" {...getFieldProps("r_confirmPassword")}/>
                     </FormItem>
                     <Button type="primary" htmlType="submit">注册</Button>
                   </Form>
