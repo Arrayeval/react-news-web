@@ -21,9 +21,6 @@ constructor(props){
     userId:0
   }
 }
-handleClick(){
-  console.log("ddd");
-}
 setModalVisible(value){
   this.setState({modalVisible:value});
 }
