@@ -51,7 +51,6 @@ class MobileHeader extends React.Component{
     		this.setModalVisible(false);
   }
   login(){
-    console.log(222);
     this.setModalVisible(true);
   };
   render(){
