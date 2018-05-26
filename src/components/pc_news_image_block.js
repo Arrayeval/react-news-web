@@ -16,7 +16,6 @@ export default class PCNewsImageBlock extends React.Component{
     var url="http://newsapi.gugujiankong.com/Handler.ashx?action=getnews&type="+this.props.type+"&count="+this.props.count;
     fetch(url,myFetchOptions).then(response=>{   return response.json();})
     .then(json=>this.setState({news:json}));
-
   };
   render(){
     const styleImage={

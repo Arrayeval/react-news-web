@@ -54,12 +54,13 @@ class MobileHeader extends React.Component{
     this.setModalVisible(true);
   };
   render(){
+     
     let {getFieldProps} =this.props.form;
     let userShow=this.state.hasLogined ? <Link><Icon type="inbox"/></Link>:<Icon type="setting" onClick={this.login.bind(this)}/>;
     return(
       <div id="mobileHeader">
         <header>
-          <img src={logo} alt="logoMobile"/>
+          <img src={logo} alt="logoMobile" width="50" height="50"/>
           <span>ReactNews</span>
           {userShow}
           <Modal title="用户中心" width="500px" wrapClassName="vertical-center-modal" visible={this.state.modalVisible}
