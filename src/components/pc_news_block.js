@@ -14,14 +14,13 @@ export default class PCNewsBLock extends React.Component{
       method:"GET",
     };
     var url="http://newsapi.gugujiankong.com/Handler.ashx?action=getnews&type="+this.props.type+"&count="+this.props.count;
-    fetch(url,myFetchOptions).then(response=>{   return response.json();})
+    fetch(url,myFetchOptions).then(response=>{  console.log(response); return response.json();})
     .then(json=>this.setState({news:json}));
-
   };
   render(){
 
     const {news} =this.state;
-
+    console.log(news)
     const newsList =news.length>0?news.map((newsItem,index)=>(
       <li key={index}>
         <Link to={`details/${newsItem.uniquekey}`} target="_blank">
