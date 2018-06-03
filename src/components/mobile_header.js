@@ -54,7 +54,7 @@ class MobileHeader extends React.Component{
     this.setModalVisible(true);
   };
   render(){
-     
+
     let {getFieldProps} =this.props.form;
     let userShow=this.state.hasLogined ? <Link><Icon type="inbox"/></Link>:<Icon type="setting" onClick={this.login.bind(this)}/>;
     return(
