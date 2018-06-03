@@ -1,14 +1,12 @@
 import React from "react"
 import {Row,Col} from 'antd'
 import {Link} from "react-router-dom"
-
 import  logo from "../images/logo_sub.png"
 import { Menu, Icon ,Tabs,message,Form,Input,Button,CheckBox,Modal} from 'antd';
 const FormItem =Form.Item;
 const SubMenu =Menu.SubMenu;
 const MenuItemGroup = Menu.ItemGroup;
 const TabPane = Tabs.TabPane;
-
 class PCHeader extends React.Component{
 constructor(props){
   super(props),
@@ -129,6 +127,4 @@ render(){
   )
 }
 }
-
-
 export default PCHeader =Form.create()(PCHeader);

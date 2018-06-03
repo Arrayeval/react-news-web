@@ -20,7 +20,7 @@ export default class MobileIndex extends React.Component{
     };
     return(
       <div>
-        <MobileHeader/>
+        <MobileHeader></MobileHeader>
         <Tabs  defaultActiveKey="1">
           <TabPane tab="头条" key="1">
             <div className="carousel">
@@ -45,7 +45,7 @@ export default class MobileIndex extends React.Component{
             <MonlieList count={20}  type="yule"></MonlieList>
           </TabPane>
         </Tabs>
-        <MobileFooter/>
+        <MobileFooter></MobileFooter>
       </div>
     )
   }

@@ -10,7 +10,7 @@ import MobileIndex from "./components/mobile_index"
 
 import {Route,BrowserRouter as Router,Switch } from "react-router-dom"
 import PCNewsDetails from "./components/pc_news_detail"
-
+import MobileNewsDetails from "./components/mobile_news_detail"
 class App extends Component {
   render() {
     return (
@@ -24,7 +24,12 @@ class App extends Component {
           </Router>
         </MediaQuery>
         <MediaQuery query="(max-device-width:1224px)">
-          <MobileIndex></MobileIndex>
+          <Router>
+            <Switch >
+              <Route exact path="/" component={MobileIndex}></Route>
+              <Route path="/details/:uniquekey" component={MobileNewsDetails}></Route>
+            </Switch >
+          </Router>
         </MediaQuery>
       </div>
     );
