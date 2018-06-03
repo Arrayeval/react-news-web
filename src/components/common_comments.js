@@ -26,7 +26,7 @@ const TabPane = Tabs.TabPane;
     fetch(url,myFetchOptions).then(response=>response.json()).then(json=>{
       // 刷新页面
       this.componentDidMount()
-    })
+    }).catch((err)=>console.log(err))
   };
   addUserCollection(){
     notification['success']({
@@ -52,7 +52,7 @@ const TabPane = Tabs.TabPane;
       method:'GET'
     };
     let url = "http://newsapi.gugujiankong.com/Handler.ashx??action=getnewsitem&uniquekey="+this.props.uniquekey;
-    fetch(url,myFetchOptions).then(response=>response.json()).then(json=>{this.setState({comments:json});})
+    fetch(url,myFetchOptions).then(response=>response.json()).then(json=>{this.setState({comments:json});}).catch((err)=>console.log(err));
   };
   render(){
     let {getFieldProps} = this.props.form

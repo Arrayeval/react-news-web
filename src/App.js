@@ -11,6 +11,7 @@ import MobileIndex from "./components/mobile_index"
 import {Route,BrowserRouter as Router,Switch } from "react-router-dom"
 import PCNewsDetails from "./components/pc_news_detail"
 import MobileNewsDetails from "./components/mobile_news_detail"
+import PCUserCenter from "./components/pc_usercenter"
 class App extends Component {
   render() {
     return (
@@ -20,6 +21,7 @@ class App extends Component {
             <Switch >
               <Route exact path="/" component={PCIndex}></Route>
               <Route path="/details/:uniquekey" component={PCNewsDetails}></Route>
+              <Route path="/usercenter" component={PCUserCenter}></Route>
             </Switch >
           </Router>
         </MediaQuery>
