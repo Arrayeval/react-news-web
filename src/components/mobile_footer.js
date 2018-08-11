@@ -7,7 +7,6 @@ export default class MobileFooter extends React.Component{
 
     }
   }
-
   render(){
     return(
       <footer>
